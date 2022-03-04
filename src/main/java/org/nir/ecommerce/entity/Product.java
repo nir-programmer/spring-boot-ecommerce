@@ -10,14 +10,18 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "product")
+@Table(name="product")
 @Data
-public class Product
-{
+public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private ProductCategory category;
 
     @Column(name = "sku")
     private String sku;
@@ -41,14 +45,10 @@ public class Product
     private int unitsInStock;
 
     @Column(name = "date_created")
-    @CreationTimestamp //Hibernate will automatically create the timestamp
+    @CreationTimestamp
     private Date dateCreated;
 
-    @UpdateTimestamp//Hibernate will update this automatically
     @Column(name = "last_updated")
+    @UpdateTimestamp
     private Date lastUpdated;
-
-
-
-
 }
