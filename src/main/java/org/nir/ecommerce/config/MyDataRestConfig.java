@@ -28,19 +28,5 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
 
-//        HttpMethod[] theUnsupportedActions = {HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PUT};
-//        //Disable Http methods for Product : PUT, DELETE , POST
-//        config.getExposureConfiguration()
-//                .forDomainType(Product.class)
-//                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
-//                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable((theUnsupportedActions))
-//                );
-//
-//        //Disable Http methods for ProductCategory : PUT, DELETE , POST
-//        config.getExposureConfiguration()
-//                .forDomainType(ProductCategory.class)
-//                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
-//                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable((theUnsupportedActions))
-//                );
     }
 }
